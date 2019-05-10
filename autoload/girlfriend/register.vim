@@ -1,7 +1,3 @@
-if exists("g:autoloaded_girlfriend_register") | finish | endif
-
-let g:autoloaded_girlfriend_register = 1
-
 let s:scopes = {}
 
 augroup GirlfriendSetup

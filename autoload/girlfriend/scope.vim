@@ -1,7 +1,3 @@
-if exists("g:autoloaded_girlfriend_scope") | finish | endif
-
-let g:autoloaded_girlfriend_scope = 1
-
 function! girlfriend#scope#cursor(scope)
   return [expand("<cfile>"), expand("<cword>")]
 endfunction
@@ -23,6 +19,12 @@ function! girlfriend#scope#line(scope) abort
   return files
 endfunction
 
-function! girlfriend#scope#function(scope) abort
+function! girlfriend#scope#grep(scope) abort
+  let scope = a:scope
 
+  let cfile = expand("<cfile>")
+  let cword = expand("<cword>")
+
+  let where = globpath(scope.where . '/**')
+  " let transform
 endfunction

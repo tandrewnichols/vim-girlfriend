@@ -1,7 +1,3 @@
-if exists("g:autoloaded_girlfriend_setup") | finish | endif
-
-let g:autoloaded_girlfriend_setup = 1
-
 function! girlfriend#setup#initialize(config) abort
   let config = a:config
   let b:girlfriend_config = config

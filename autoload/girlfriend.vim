@@ -1,7 +1,3 @@
-if exists("g:autoloaded_girlfriend") | finish | endif
-
-let g:autoloaded_girlfriend = 1
-
 let s:known_scopes = ['cursor', 'line', 'function', 'file']
 
 " The 'main' process. Iterate over potential file
@@ -132,11 +128,11 @@ function! girlfriend#skipFiletype(scope) abort
   let scope = a:scope
   let filetypes = split(&ft, '\.') 
 
-  if has_key(scope, 'ft_blacklist') && index(filetypes, scope.ft_blacklist) != -1
+  if has_key(scope, 'ft_ignore') && index(filetypes, scope.ft_ignore) != -1
     return 1
   endif
   
-  if has_key(scope, 'ft_whitelist') && index(filetypes, scope.ft_whitelist) == -1
+  if has_key(scope, 'ft_include') && index(filetypes, scope.ft_include) == -1
     return 1
   endif
 
